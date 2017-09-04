@@ -1,8 +1,0 @@
-export const ADD_GAME = 'ADD_GAME';
-export const DELETE_GAME = 'DELETE_GAME';
-export const SET_VISIBLE_FILTER = 'SET_VISIBLE_FILTER';
-export const FAVORITE_ONE = 'FAVORITE_ONE';
-export const UNFAVORITE_ONE = 'UNFAVORITE_ONE';
-export const SHOW_FAVORITE = 'SHOW_FAVORITE';
-export const SHOW_ALL = 'SHOW_ALL';
-export const SHOW_UNFAVORITE = 'SHOW_UNFAVORITE';

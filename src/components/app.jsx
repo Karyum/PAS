@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import GamesList from '../containers/games_list.jsx';
-
 export default class App extends Component {
   constructor(props) {
     super();
@@ -10,7 +8,7 @@ export default class App extends Component {
   }
   render() {
     return (
-      <GamesList />
+      <h1>Hi</h1>
     )
   }
 }
