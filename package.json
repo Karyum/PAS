@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "bundle": "webpack --config webpack.config.js",
-    "dev:start": "webpack-dev-server --watch",
-    "start": "npm run bundle && node ./src/start_server.js"
+    "bundle:watch": "webpack --config webpack.config.js --watch",
+    "dev:start": "nodemon ./src/start_server.js",
+    "start": "node ./src/start_server.js"
   },
   "author": "Karyum",
   "license": "ISC",
@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "express": "^4.15.4",
+    "nodemon": "^1.12.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
