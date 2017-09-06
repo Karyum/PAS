@@ -4,8 +4,16 @@ import reducers from './reducers';
 
 
 const storeConfigure = () => {
-  const initialStore = {};
-  
+  const initialStore = {
+    guesthouses: [
+      { title: 'Liwan' },
+      { title: 'Fauzi Azar' },
+      { title: 'Founders & Coders' }
+    ],
+    current: {},
+    currentMethod: ''
+  };
+
   // store it in local storage
   // const enhancer = compose(
   //   persistState()
