@@ -15,11 +15,11 @@ const storeConfigure = () => {
   };
 
   // store it in local storage
-  // const enhancer = compose(
-  //   persistState()
-  // )
+  const enhancer = compose(
+    persistState()
+  )
 
-  const store = createStore(reducers, initialStore);
+  const store = createStore(reducers, initialStore, enhancer);
 
   return store
 }
