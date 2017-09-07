@@ -6,9 +6,9 @@ import reducers from './reducers';
 const storeConfigure = () => {
   const initialStore = {
     guesthouses: [
-      { title: 'Liwan' },
-      { title: 'Fauzi Azar' },
-      { title: 'Founders & Coders' }
+      { title: 'Liwan', address: '6132 St 22-24, Nazareth' },
+      { title: 'Fauzi Azar', address: '6108 St, Nazareth, 16125' },
+      { title: 'Founders & Coders', address: 'Al-Bishara St 6, Nazareth, 16100' }
     ],
     current: {},
     currentMethod: ''
