@@ -7,9 +7,10 @@ import { setGuesthouse } from '../actions/index.js';
 import { CAR_METHOD, BUS_METHOD, TAXI_METHOD } from '../constants/action_types.js';
 
 class MethodList extends Component {
-  componentWillMount(){
+  componentWillMount() {
     const { guesthouse } = this.props.match.params;
-    this.props.setGuesthouse({ title: guesthouse });
+    const filteredGhouse = this.props.guesthouses.filter((ghouse) => ghouse.title == guesthouse)
+    this.props.setGuesthouse(filteredGhouse[0]);
   }
   render() {
     return (
@@ -25,6 +26,7 @@ class MethodList extends Component {
 }
 
 const mapStateToProps = state => ({
+  guesthouses: state.guesthouses,
   guesthouse: state.current
 });
 
