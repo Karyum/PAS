@@ -12,6 +12,8 @@ const Routes = () => {
         <Route path='/' exact component={App} />
         <Route path='/place/:guesthouse' component={MethodList} />
         <Route path='/car' exact component={Directions} />
+        <Route path='/bus' exact component={Directions} />
+        <Route path='/taxi' exact component={Directions} />
       </Switch>
     </BrowserRouter>
   );
