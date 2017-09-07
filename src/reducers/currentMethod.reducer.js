@@ -6,10 +6,10 @@ const CurrentMethod = (state = '', action = {}) => {
       return 'Car Direction'
       break;
     case BUS_METHOD:
-      return BUS_METHOD
+      return 'Bus Station'
       break;
     case TAXI_METHOD:
-      return TAXI_METHOD
+      return 'Find a taxi'
     default:
       return state
   }
