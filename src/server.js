@@ -2,9 +2,12 @@ const express = require('express');
 const path = require('path');
 const nodeGeoCode = require('node-geocoder');
 const bodyParse = require('body-parser');
+const MapboxClient = require('mapbox');
 
 const app = express();
 const geocoder = nodeGeoCode({ provider: 'google' })
+
+let addressLatLng = {};
 
 app.use(express.static(path.resolve(__dirname, '..', 'dist')));
 app.use(bodyParse.json())
@@ -15,6 +18,7 @@ app.post('/geocode', (req, res) => {
       console.log(err);
       return
     }
+    addressLatLng = { lat: response[0].latitude, lng: response[0].longitude }
     res.json({ lat: response[0].latitude, lng: response[0].longitude })
   })
 })
