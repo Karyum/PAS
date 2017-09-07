@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Axios from 'axios';
-import ReactMapboxGl from 'react-mapbox-gl';
 
 import { setMethod } from '../actions/index.js';
+import SimpleExample from '../components/map.jsx';
 import { CAR_METHOD, BUS_METHOD, TAXI_METHOD } from '../constants/action_types.js';
-
 
 class Directions extends Component {
   constructor(props) {
@@ -27,7 +26,6 @@ class Directions extends Component {
       console.log(err);
       return err
     })
-
   }
 
    findMethod(method) {
@@ -49,7 +47,7 @@ class Directions extends Component {
     return (
       <div>
         <h2>{this.props.currentMethod}</h2>
-        <h1>{this.props.current.title}</h1>
+        <SimpleExample />
       </div>
     )
   }
