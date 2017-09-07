@@ -34,7 +34,6 @@ module.exports = {
     })
   ],
   resolve: {
-    extensions: ['.js', '.jsx'],
-  },
-  externals: 'react-mapbox-gl'
+    extensions: ['.js', '.jsx']
+  }
 }
