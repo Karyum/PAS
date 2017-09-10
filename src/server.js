@@ -10,7 +10,8 @@ const geocoder = nodeGeoCode({ provider: 'google' })
 let addressLatLng = {};
 
 app.use(express.static(path.resolve(__dirname, '..', 'dist')));
-app.use(bodyParse.json())
+app.use(bodyParse.json());
+app.use(express.static('public'));
 
 app.post('/geocode', (req, res) => {
   geocoder.geocode(req.body.address, (err ,response) => {
