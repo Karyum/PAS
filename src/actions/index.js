@@ -1,4 +1,4 @@
-import { CHOSE_GUESTHOUSE, CAR_METHOD } from '../constants/action_types.js';
+import { CHOSE_GUESTHOUSE, CAR_METHOD, FOUND_LOCATION } from '../constants/action_types.js';
 
 export const setGuesthouse = (guesthouse) => {
   console.log(guesthouse);
@@ -15,5 +15,13 @@ export const setMethod = (method) => {
   return {
     type: method,
     method
+  }
+}
+
+export const setLocation = (position) => {
+  return {
+    type: FOUND_LOCATION,
+    latitude: position.latitude,
+    longitude: position.longitude
   }
 }
