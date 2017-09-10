@@ -19,13 +19,9 @@ class Directions extends Component {
 
     Axios.post('/geocode', {
       address: this.props.current.address
-    }).then(res => {
-       console.log(res.data);
-       this.setState({ latlng: res.data })
-    }).catch(err => {
-      console.log(err);
-      return err
     })
+    .then(res => this.setState({ latlng: res.data }))
+    .catch( err => err )
   }
 
    findMethod(method) {
