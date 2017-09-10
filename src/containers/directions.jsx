@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Axios from 'axios';
 
 import { setMethod } from '../actions/index.js';
-import SimpleExample from '../components/map.jsx';
+import Map from '../components/map.jsx';
 import { CAR_METHOD, BUS_METHOD, TAXI_METHOD } from '../constants/action_types.js';
 
 class Directions extends Component {
@@ -22,6 +22,10 @@ class Directions extends Component {
     })
     .then(res => this.setState({ latlng: res.data }))
     .catch( err => err )
+
+    navigator.geolocation.getCurrentPosition((postion) => {
+      return this.setState({ coords: postion.coords })
+    })
   }
 
    findMethod(method) {
@@ -43,16 +47,18 @@ class Directions extends Component {
     return (
       <div>
         <h2>{this.props.currentMethod}</h2>
-        <SimpleExample />
+        <Map coords={this.props.coords}/>
       </div>
     )
   }
 
 }
 const mapStateToProps = (state) => {
+  console.log('STATE', state);
   return {
     current: state.current,
-    currentMethod: state.currentMethod
+    currentMethod: state.currentMethod,
+    coords: state.usersLocation
   }
 }
 
