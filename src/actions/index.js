@@ -5,7 +5,9 @@ export const setGuesthouse = (guesthouse) => {
     type : CHOSE_GUESTHOUSE,
     guesthouse: {
       title: guesthouse.title,
-      address: guesthouse.address
+      address: guesthouse.address,
+      latitude: guesthouse.latitude,
+      longtitude: guesthouse.longtitude
     }
   }
 }
