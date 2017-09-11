@@ -1,7 +1,6 @@
 import { CHOSE_GUESTHOUSE, CAR_METHOD, FOUND_LOCATION } from '../constants/action_types.js';
 
 export const setGuesthouse = (guesthouse) => {
-  console.log(guesthouse);
   return {
     type : CHOSE_GUESTHOUSE,
     guesthouse: {

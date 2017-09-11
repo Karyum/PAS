@@ -54,7 +54,6 @@ class Directions extends Component {
 
 }
 const mapStateToProps = (state) => {
-  console.log('STATE', state);
   return {
     current: state.current,
     currentMethod: state.currentMethod,

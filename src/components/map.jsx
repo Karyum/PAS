@@ -8,7 +8,6 @@ const MapBox = ReactMapboxGl({
   maxZoom: 50
 })
 const Map = (props) => {
-  console.log(props);
   return (
     <div>
       <MapBox
