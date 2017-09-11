@@ -10,18 +10,21 @@ class Directions extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {latlng: {}}
+    this.state = {
+      directions: []
+    }
   }
 
   componentWillMount() {
     const { path } = this.props.match
     this.props.setMethod(this.findMethod(path));
 
-    Axios.post('/geocode', {
-      address: this.props.current.address
-    })
-    .then(res => this.setState({ latlng: res.data }))
-    .catch( err => err )
+      Axios.post('/get-steps', {
+        user: this.props.coords,
+        place: this.props.current
+      })
+      .then(res => console.log(res))
+      .catch(err => err)
 
     navigator.geolocation.getCurrentPosition((postion) => {
       return this.setState({ coords: postion.coords })
@@ -44,10 +47,11 @@ class Directions extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div>
         <h2>{this.props.currentMethod}</h2>
-        <Map coords={this.props.coords}/>
+        <Map coords={this.props.coords} currentGuesthouse={this.state.latlng} />
       </div>
     )
   }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import GuesthouseList from '../components/guesthouse_list.jsx';
-import { setGuesthouse, setLocation } from '../actions/index.js';
+import { setLocation } from '../actions/index.js';
 
 class App extends Component {
   constructor(props) {
@@ -18,7 +18,8 @@ class App extends Component {
   }
   render() {
     return (
-        <GuesthouseList guesthouses={this.props.guesthouses} reducer={this.props.setGuesthouse} />
+        <GuesthouseList
+          guesthouses={this.props.guesthouses} />
     )
   }
 }
@@ -28,7 +29,6 @@ class App extends Component {
 })
 
 const mapDispatchToProps = {
-  setGuesthouse,
   setLocation
 }
 

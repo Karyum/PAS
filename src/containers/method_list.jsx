@@ -8,6 +8,7 @@ import { CAR_METHOD, BUS_METHOD, TAXI_METHOD } from '../constants/action_types.j
 
 class MethodList extends Component {
   componentWillMount() {
+    console.log(this.props.guesthouses);
     const { guesthouse } = this.props.match.params;
     const filteredGhouse = this.props.guesthouses.filter((ghouse) => ghouse.title == guesthouse)
     this.props.setGuesthouse(filteredGhouse[0]);

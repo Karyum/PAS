@@ -22,6 +22,11 @@ const Map = (props) => {
           coordinates={[props.coords.usersLong, props.coords.usersLat]}>
           <img src={Icon} />
         </Marker>
+
+        <Layer
+          type="line">
+          <Feature coordinates={[[35.297201799999996, 32.7017354], [35.2979486, 32.7043734]]}></Feature>
+        </Layer>
       </MapBox>
     </div>
   )
