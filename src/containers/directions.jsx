@@ -23,12 +23,8 @@ class Directions extends Component {
         user: this.props.coords,
         place: this.props.current
       })
-      .then(res => console.log(res))
+      .then(res => this.setState({ directions: res.data.geometry.coordinates }))
       .catch(err => err)
-
-    navigator.geolocation.getCurrentPosition((postion) => {
-      return this.setState({ coords: postion.coords })
-    })
   }
 
    findMethod(method) {
@@ -47,11 +43,11 @@ class Directions extends Component {
   }
 
   render() {
-    console.log(this.props);
+    console.log(this.state);
     return (
       <div>
         <h2>{this.props.currentMethod}</h2>
-        <Map coords={this.props.coords} currentGuesthouse={this.state.latlng} />
+        <Map coords={this.props.coords} direction={this.state.directions} />
       </div>
     )
   }
