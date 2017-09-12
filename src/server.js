@@ -27,20 +27,21 @@ app.use(express.static('public'));
 // })
 
 app.post('/get-steps', (req, res) => {
-  console.log(isNaN(req.body.user.latitude));
-  console.log(isNaN(req.body.user.longitude));
-  console.log(isNaN(req.body.place.lat));
-  console.log(isNaN(req.body.place.lng));
+  console.log(req.body);
   mapboxClient.getDirections([
-    { latitude: req.body.user.latitude, longitude: req.body.user.longitude },
-    { latitude: req.body.place.lat, longitude: req.body.place.lng }
-  ], (err, result) => {
-    if (err) {
-      console.log(err);
-      return
-    }
-    res.send(result)
-  })
+    { latitude: req.body.user.usersLat, longitude: req.body.user.usersLong },
+    { latitude: req.body.place.latitude, longitude: req.body.place.longtitude }
+  ],
+    {
+      steps: true,
+      alternatives: true,
+      geometries: 'geojson',
+      overview: 'simplified',
+    },
+    (err, results) => {
+      console.log(results.routes[0].geometry);
+      res.send(results.routes[0])
+    });
 })
 
 app.get('*', (req, res) => {
