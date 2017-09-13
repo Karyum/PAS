@@ -3,6 +3,7 @@ const path = require('path');
 const nodeGeoCode = require('node-geocoder');
 const bodyParse = require('body-parser');
 const MapboxClient = require('mapbox');
+const compression = require('compression');
 require('env2')('./.env');
 
 const app = express();
@@ -14,6 +15,7 @@ let addressLatLng = {};
 app.use(express.static(path.resolve(__dirname, '..', 'dist')));
 app.use(bodyParse.json());
 app.use(express.static('public'));
+app.use(compression());
 
 // app.post('/geocode', (req, res) => {
 //   geocoder.geocode(req.body.address, (err ,response) => {
