@@ -18,13 +18,16 @@ class Directions extends Component {
   componentWillMount() {
     const { path } = this.props.match
     this.props.setMethod(this.findMethod(path));
-
+      if (this.props.coords.usersLat && this.props.current.latitude) {
       Axios.post('/get-steps', {
         user: this.props.coords,
         place: this.props.current
       })
       .then(res => this.setState({ directions: res.data.geometry.coordinates }))
       .catch(err => err)
+    } else {
+      return
+    }
   }
 
    findMethod(method) {
