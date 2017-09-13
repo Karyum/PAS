@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Axios from 'axios';
 
 import { setMethod } from '../actions/index.js';
-import Map from '../components/map.jsx';
+import MapView from '../components/map.jsx';
 import { CAR_METHOD, BUS_METHOD, TAXI_METHOD } from '../constants/action_types.js';
 
 class Directions extends Component {
@@ -47,7 +47,7 @@ class Directions extends Component {
     return (
       <div>
         <h2>{this.props.currentMethod}</h2>
-        <Map coords={this.props.coords} direction={this.state.directions} />
+        <MapView coords={this.props.coords} direction={this.state.directions} />
       </div>
     )
   }
