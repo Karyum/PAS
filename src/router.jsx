@@ -12,8 +12,6 @@ const Routes = () => {
       <Switch>
         <Route path='/' exact component={App} />
         <Route path='/place/:guesthouse' component={MethodList} />
-        <Route path='/car' exact component={GoogleMethod} />
-        <Route path='/bus' exact component={GoogleMethod} />
         <Route path='/walking' exact component={Walking} />
       </Switch>
     </BrowserRouter>
