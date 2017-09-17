@@ -49,7 +49,7 @@ class Directions extends Component {
     console.log(this.state);
     return (
       <div>
-        <h2>{this.props.currentMethod}</h2>
+        <h2>Walk there</h2>
         <MapView coords={this.props.coords} direction={this.state.directions} />
       </div>
     )
@@ -59,7 +59,6 @@ class Directions extends Component {
 const mapStateToProps = (state) => {
   return {
     current: state.current,
-    currentMethod: state.currentMethod,
     coords: state.usersLocation
   }
 }
