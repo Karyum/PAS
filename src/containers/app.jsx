@@ -16,11 +16,9 @@ class App extends Component {
       return this.props.setLocation(postion.coords)
     })
   }
+
   render() {
-    return (
-        <GuesthouseList
-          guesthouses={this.props.guesthouses} />
-    )
+    return <GuesthouseList guesthouses={this.props.guesthouses} />
   }
 }
 

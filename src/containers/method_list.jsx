@@ -14,6 +14,7 @@ class MethodList extends Component {
     this.handleCarClick = this.handleCarClick.bind(this);
     this.handleBusClick = this.handleBusClick.bind(this);
   }
+  
   componentWillMount() {
     const { guesthouse } = this.props.match.params;
     const filteredGhouse = this.props.guesthouses.filter((ghouse) => ghouse.title == guesthouse)

@@ -8,7 +8,7 @@ import { CAR_METHOD, BUS_METHOD, TAXI_METHOD } from '../constants/action_types.j
 
 class Directions extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       directions: []
@@ -46,7 +46,6 @@ class Directions extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div>
         <h2>Walk there</h2>

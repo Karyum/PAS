@@ -5,7 +5,6 @@ import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 
 const MapView = (props) => {
     if (props.coords.usersLat) {
-      console.log(props);
     return (
       <Map style={{
           height: "75vh",
@@ -19,8 +18,6 @@ const MapView = (props) => {
         position={[props.coords.usersLat, props.coords.usersLong]}
         >
       </Marker>
-
-      
       </Map>
     )
   } else {
