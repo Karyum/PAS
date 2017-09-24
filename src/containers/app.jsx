@@ -18,12 +18,12 @@ class App extends Component {
   }
 
   render() {
-    return <GuesthouseList guesthouses={this.props.guesthouses} />
+    return <GuesthouseList guesthouses={this.props.allGuesthouses} />
   }
 }
 
-  const mapStateToProps = (state) => ({
-  guesthouses: state.guesthouses
+  const mapStateToProps = state => ({
+  allGuesthouses: state.allGuesthouses
 })
 
 const mapDispatchToProps = {

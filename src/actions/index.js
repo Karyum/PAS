@@ -1,6 +1,6 @@
 import { CHOSE_GUESTHOUSE, CAR_METHOD, FOUND_LOCATION } from '../constants/action_types.js';
 
-export const setGuesthouse = (guesthouse) => {
+export const setGuesthouse = guesthouse => {
   return {
     type : CHOSE_GUESTHOUSE,
     guesthouse: {
@@ -12,14 +12,14 @@ export const setGuesthouse = (guesthouse) => {
   }
 }
 
-export const setMethod = (method) => {
+export const setMethod = method => {
   return {
     type: method,
     method
   }
 }
 
-export const setLocation = (position) => {
+export const setLocation = position => {
   return {
     type: FOUND_LOCATION,
     latitude: position.latitude,

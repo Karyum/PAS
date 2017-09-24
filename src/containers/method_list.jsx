@@ -14,20 +14,20 @@ class MethodList extends Component {
     this.handleCarClick = this.handleCarClick.bind(this);
     this.handleBusClick = this.handleBusClick.bind(this);
   }
-  
+
   componentWillMount() {
     const { guesthouse } = this.props.match.params;
-    const filteredGhouse = this.props.guesthouses.filter((ghouse) => ghouse.title == guesthouse)
+    const filteredGhouse = this.props.allGuesthouses.filter((ghouse) => ghouse.title == guesthouse)
     this.props.setGuesthouse(filteredGhouse[0]);
   }
 
   handleCarClick(e) {
-    const googleDrivingUrl = 'https://www.google.com/maps/dir/?api=1&origin=' + this.props.coords.usersLat + '%2C' + this.props.coords.usersLong + '&destination=' + this.props.guesthouse.latitude + '%2C' + this.props.guesthouse.longtitude + '&travelmode=driving'
+    const googleDrivingUrl = 'https://www.google.com/maps/dir/?api=1&origin=' + this.props.usersLocation.usersLat + '%2C' + this.props.usersLocation.usersLong + '&destination=' + this.props.selectedGuesthouse.latitude + '%2C' + this.props.selectedGuesthouse.longtitude + '&travelmode=driving'
     location.replace(googleDrivingUrl);
   }
 
   handleBusClick(e) {
-    const googleTransitUrl = 'https://www.google.com/maps/dir/?api=1&origin=' + this.props.coords.usersLat + '%2C' + this.props.coords.usersLong + '&destination=' + this.props.guesthouse.latitude + '%2C' + this.props.guesthouse.longtitude + '&travelmode=transit';
+    const googleTransitUrl = 'https://www.google.com/maps/dir/?api=1&origin=' + this.props.usersLocation.usersLat + '%2C' + this.props.usersLocation.usersLong + '&destination=' + this.props.selectedGuesthouse.latitude + '%2C' + this.props.selectedGuesthouse.longtitude + '&travelmode=transit';
     location.replace(googleTransitUrl);
   }
 
@@ -38,16 +38,16 @@ class MethodList extends Component {
         <button onClick={this.handleBusClick} className="mh2">Bus method</button>
         <Link to='/walking' className="mh2">Walking method</Link>
 
-        Current guesthouse: { this.props.guesthouse.title }
+        Current guesthouse: { this.props.selectedGuesthouse.title }
       </div>
     )
   }
 }
 
 const mapStateToProps = state => ({
-  guesthouses: state.guesthouses,
-  guesthouse: state.current,
-  coords: state.usersLocation
+  allGuesthouses: state.allGuesthouses,
+  selectedGuesthouse: state.selectedGuesthouse,
+  usersLocation: state.usersLocation
 });
 
 const mapDispatchToProps = {

@@ -16,12 +16,11 @@ class Directions extends Component {
   }
 
   componentWillMount() {
-    const { path } = this.props.match
-    this.props.setMethod(this.findMethod(path));
-      if (this.props.coords.usersLat && this.props.current.latitude) {
+    const { path } = this.props.match;
+    if (this.props.usersLocation.usersLat && this.props.selectedGuesthouse.latitude) {
       Axios.post('/get-steps', {
-        user: this.props.coords,
-        place: this.props.current
+        user: this.props.usersLocation,
+        place: this.props.selectedGuesthouse
       })
       .then(res => this.setState({ directions: res.data.geometry.coordinates }))
       .catch(err => err)
@@ -30,35 +29,20 @@ class Directions extends Component {
     }
   }
 
-   findMethod(method) {
-    switch (method) {
-      case '/car':
-        return CAR_METHOD
-        break;
-      case '/bus':
-        return BUS_METHOD
-        break;
-      case '/taxi':
-        return TAXI_METHOD
-      default:
-        return method
-    }
-  }
-
   render() {
     return (
       <div>
         <h2>Walk there</h2>
-        <MapView coords={this.props.coords} direction={this.state.directions} />
+        <MapView usersLocation={this.props.usersLocation} direction={this.state.directions} />
       </div>
     )
   }
 
 }
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    current: state.current,
-    coords: state.usersLocation
+    selectedGuesthouse: state.selectedGuesthouse,
+    usersLocation: state.usersLocation
   }
 }
 

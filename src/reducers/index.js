@@ -5,9 +5,9 @@ import CurrentGuestHouse from './current.reducer.js';
 import LocationReducer from './location.reducer.js';
 
 const rootReducers = combineReducers({
-  guesthouses: GuesthouseReducer,
-  current: CurrentGuestHouse,
+  allGuesthouses: GuesthouseReducer,
+  selectedGuesthouse: CurrentGuestHouse,
   usersLocation: LocationReducer
-})
+});
 
 export default rootReducers;
