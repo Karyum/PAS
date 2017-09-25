@@ -22,10 +22,11 @@ app.post('/get-steps', (req, res) => {
       steps: true,
       alternatives: true,
       geometries: 'geojson',
-      overview: 'simplified',
+      overview: 'full',
     },
     (err, results) => {
-      res.send(results.routes[0])
+      console.log(results.routes[0].geometry.coordinates);
+      res.send(results.routes[0].geometry.coordinates);
     });
 })
 
