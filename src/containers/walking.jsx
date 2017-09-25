@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Axios from 'axios';
 
-import { setMethod } from '../actions/index.js';
+import { setDirections } from '../actions/index.js';
 import MapView from '../components/map.jsx';
 import { CAR_METHOD, BUS_METHOD, TAXI_METHOD } from '../constants/action_types.js';
 
@@ -22,7 +22,7 @@ class Directions extends Component {
         user: this.props.usersLocation,
         place: this.props.selectedGuesthouse
       })
-      .then(res => this.setState({ directions: res.data.geometry.coordinates }))
+      .then(res =>  this.props.setDirections(res.data))
       .catch(err => err)
     } else {
       return
@@ -33,21 +33,21 @@ class Directions extends Component {
     return (
       <div>
         <h2>Walk there</h2>
-        <MapView usersLocation={this.props.usersLocation} direction={this.state.directions} />
+        <MapView usersLocation={this.props.usersLocation} direction={this.props.directions.directions} />
       </div>
     )
   }
-
 }
 const mapStateToProps = state => {
   return {
     selectedGuesthouse: state.selectedGuesthouse,
-    usersLocation: state.usersLocation
+    usersLocation: state.usersLocation,
+    directions: state.directions
   }
 }
 
 const mapDispatchToProps = {
-  setMethod
+  setDirections
 }
 
 

@@ -10,6 +10,7 @@ const storeConfigure = () => {
       { title: 'AlReda', address: 'Al-Bishara St 21, Nazareth', latitude: 32.703154, longtitude: 35.297981 }
     ],
     selectedGuesthouse: {},
+    directions: {}
   };
 
   // store it in local storage
