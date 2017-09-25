@@ -18,9 +18,7 @@ class MethodList extends Component {
   componentWillMount() {
     const { guesthouse } = this.props.match.params;
     const filteredGhouse = this.props.allGuesthouses.filter((ghouse) => ghouse.title == guesthouse)
-    console.log(filteredGhouse);
     if (filteredGhouse.length === 0) {
-      console.log("what?");
       return
     } else {
       this.props.setGuesthouse(filteredGhouse[0]);
@@ -39,7 +37,6 @@ class MethodList extends Component {
 
   render() {
     if (!this.props.selectedGuesthouse.title) {
-      console.log(this.props);
       return <h1>Guesthouse does not exist</h1>
     } else {
     return (
