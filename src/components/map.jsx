@@ -9,7 +9,6 @@ const MapBox = ReactMapboxGl({
 })
 
 const MapView = ({ usersLocation, direction }) => {
-  console.log(direction);
     if (usersLocation.usersLat && direction) {
     return (
       <div>

@@ -25,7 +25,6 @@ app.post('/get-steps', (req, res) => {
       overview: 'full',
     },
     (err, results) => {
-      console.log(results.routes[0].geometry.coordinates);
       res.send(results.routes[0].geometry.coordinates);
     });
 })

@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 
 import { setGuesthouse } from '../actions/index.js';
 
-import { CAR_METHOD, BUS_METHOD, TAXI_METHOD } from '../constants/action_types.js';
-
 class MethodList extends Component {
   constructor(props) {
     super();
@@ -39,16 +37,16 @@ class MethodList extends Component {
     if (!this.props.selectedGuesthouse.title) {
       return <h1>Guesthouse does not exist</h1>
     } else {
-    return (
-      <div>
-        <button onClick={this.handleCarClick} className="mh2">Car method</button>
-        <button onClick={this.handleBusClick} className="mh2">Bus method</button>
-        <Link to='/walking' className="mh2">Walking method</Link>
+      return (
+        <div>
+          <button onClick={this.handleCarClick} className="mh2">Car method</button>
+          <button onClick={this.handleBusClick} className="mh2">Bus method</button>
+          <Link to='/walking' className="mh2">Walking method</Link>
 
-        Current guesthouse: { this.props.selectedGuesthouse.title }
-      </div>
-    )
-  }
+          Current guesthouse: { this.props.selectedGuesthouse.title }
+        </div>
+      )
+    }
   }
 }
 

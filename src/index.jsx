@@ -8,8 +8,8 @@ import storeConfigure from './store.config.js';
 const store = storeConfigure();
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Routes />
-  </Provider>
+    <Provider store={store}>
+      <Routes />
+    </Provider>
   , document.getElementById('root')
 );

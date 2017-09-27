@@ -4,15 +4,12 @@ import Axios from 'axios';
 
 import { setDirections } from '../actions/index.js';
 import MapView from '../components/map.jsx';
-import { CAR_METHOD, BUS_METHOD, TAXI_METHOD } from '../constants/action_types.js';
 
 class Directions extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      directions: []
-    }
+    this.state = {};
   }
 
   componentWillMount() {
@@ -24,8 +21,6 @@ class Directions extends Component {
       })
       .then(res =>  this.props.setDirections(res.data))
       .catch(err => err)
-    } else {
-      return
     }
   }
 
@@ -38,13 +33,12 @@ class Directions extends Component {
     )
   }
 }
-const mapStateToProps = state => {
-  return {
-    selectedGuesthouse: state.selectedGuesthouse,
-    usersLocation: state.usersLocation,
-    directions: state.directions
-  }
-}
+
+const mapStateToProps = state => ({
+  selectedGuesthouse: state.selectedGuesthouse,
+  usersLocation: state.usersLocation,
+  directions: state.directions
+})
 
 const mapDispatchToProps = {
   setDirections

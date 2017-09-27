@@ -6,7 +6,7 @@ import { setLocation } from '../actions/index.js';
 
 class App extends Component {
   constructor(props) {
-    super();
+    super(props);
 
     this.state = {}
   }
@@ -23,11 +23,11 @@ class App extends Component {
 }
 
   const mapStateToProps = state => ({
-  allGuesthouses: state.allGuesthouses
-})
+    allGuesthouses: state.allGuesthouses
+  })
 
-const mapDispatchToProps = {
-  setLocation
-}
+  const mapDispatchToProps = {
+    setLocation
+  }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
