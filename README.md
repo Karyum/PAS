@@ -1,8 +1,5 @@
 # React Setup
 
-
-*This is Development environment and **NOT** production*
-
 **If you think that something is missing here or outdated please feel free to open  issues**
 
 
@@ -15,9 +12,9 @@
 npm i
 ```
 
-- *To bundle once*
+- *To watch bundle*
 ```
-npm run bundle
+npm run bundle:watch
 ```
 
 - To run the dev server
