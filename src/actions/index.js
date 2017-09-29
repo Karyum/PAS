@@ -23,11 +23,12 @@ export const setLocation = position => {
   return {
     type: FOUND_LOCATION,
     latitude: position.latitude,
-    longitude: position.longitude
+    longtitude: position.longitude
   }
 }
 
 export const setDirections = directions => {
+  console.log(directions);
   return {
     type: FOUND_DIRECTIONS,
     directions
