@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import GuesthouseReducer from './guesthouse.reducer.js';
-import CurrentGuestHouse from './current.reducer.js';
-import LocationReducer from './location.reducer.js';
-import DirectionsReducer from './directions.reducer.js';
+import GuesthouseReducer from './guesthouse.reducer';
+import CurrentGuestHouse from './current.reducer';
+import LocationReducer from './location.reducer';
+import DirectionsReducer from './directions.reducer';
 
 const rootReducers = combineReducers({
   allGuesthouses: GuesthouseReducer,

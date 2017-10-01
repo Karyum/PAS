@@ -18,20 +18,20 @@ app.post('/get-steps', (req, res) => {
     { latitude: req.body.user.usersLat, longitude: req.body.user.usersLong },
     { latitude: req.body.place.latitude, longitude: req.body.place.longtitude }
   ],
-    {
-      steps: true,
-      alternatives: true,
-      geometries: 'geojson',
-      overview: 'full',
-    },
-    (err, results) => {
-      res.send(results.routes[0].geometry.coordinates);
-    });
-})
+  {
+    steps: true,
+    alternatives: true,
+    geometries: 'geojson',
+    overview: 'full'
+  },
+  (err, results) => {
+    res.send(results.routes[0].geometry.coordinates);
+  });
+});
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '..', 'dist', 'index.html'))
-})
+  res.sendFile(path.resolve(__dirname, '..', 'dist', 'index.html'));
+});
 
 
-module.exports = app
+module.exports = app;

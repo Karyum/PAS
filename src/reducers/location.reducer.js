@@ -1,4 +1,4 @@
-import { FOUND_LOCATION } from '../constants/action_types.js';
+import { FOUND_LOCATION } from '../constants/action_types';
 
 const LocationReducer = (state = {}, action) => {
   switch (action.type) {
@@ -6,10 +6,10 @@ const LocationReducer = (state = {}, action) => {
       return {
         usersLat: action.latitude,
         usersLong: action.longtitude
-      }
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default LocationReducer
+export default LocationReducer;

@@ -1,5 +1,5 @@
-import { createStore, compose } from 'redux';
-import persistState from 'redux-localstorage';
+import { createStore } from 'redux';
+// import persistState from 'redux-localstorage';
 import reducers from './reducers';
 
 const storeConfigure = () => {
@@ -20,7 +20,7 @@ const storeConfigure = () => {
 
   const store = createStore(reducers, initialStore);
 
-  return store
-}
+  return store;
+};
 
 export default storeConfigure;

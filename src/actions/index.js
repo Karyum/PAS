@@ -1,7 +1,6 @@
 import { CHOSE_GUESTHOUSE, FOUND_LOCATION, FOUND_DIRECTIONS } from '../constants/action_types.js';
 
-export const setGuesthouse = guesthouse => {
-  return {
+export const setGuesthouse = guesthouse => ({
     type : CHOSE_GUESTHOUSE,
     guesthouse: {
       title: guesthouse.title,
@@ -9,8 +8,8 @@ export const setGuesthouse = guesthouse => {
       latitude: guesthouse.latitude,
       longtitude: guesthouse.longtitude
     }
-  }
-}
+  })
+
 
 export const setMethod = method => {
   return {
@@ -28,7 +27,6 @@ export const setLocation = position => {
 }
 
 export const setDirections = directions => {
-  console.log(directions);
   return {
     type: FOUND_DIRECTIONS,
     directions
