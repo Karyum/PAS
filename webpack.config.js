@@ -13,11 +13,13 @@ module.exports = {
     loaders: [
       {
         test: /\.jsx?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['env', 'react']
-        }
+        loader: 'react-hot-loader!babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.js$/,
+        loaders: ['eslint-loader', 'babel-loader'],
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,
@@ -38,4 +40,4 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx']
   }
-}
+};
