@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import GuesthouseList from '../components/guesthouse_list.jsx';
-import { setLocation } from '../actions/index';
+import { setLocation, getPlaces } from '../actions/index';
 
 class App extends Component {
   constructor(props) {
@@ -13,6 +13,7 @@ class App extends Component {
   }
 
   componentWillMount() {
+    this.props.getPlaces();
     navigator.geolocation.getCurrentPosition(postion => this.props.setLocation(postion.coords)
     );
   }
@@ -27,11 +28,12 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  setLocation
+  setLocation,
+  getPlaces
 };
 
 App.propTypes = {
-  setLocation: PropTypes.fun,
+  setLocation: PropTypes.func,
   allGuesthouses: PropTypes.array
 };
 

@@ -71,7 +71,7 @@ MethodList.propTypes = {
     usersLong: PropTypes.number
   }),
   setGuesthouse: PropTypes.func,
-  match: PropTypes.string
+  match: PropTypes.object
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MethodList);
