@@ -5,6 +5,7 @@ const CurrentGuestHouse = (state = { title: '' }, action) => {
     case CHOSE_GUESTHOUSE:
       return action.guesthouse;
     default:
+      console.log(4);
       return state;
   }
 };
